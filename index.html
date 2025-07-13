@@ -1,207 +1,516 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dieta Pet Saudável</title>
+    <title>🍖 15 Receitas Naturais para Pets 🥕</title>
     <style>
+        :root {
+            --primary: #ff00ff;
+            --secondary: #ff00ff;
+            --accent: #e67e22;
+            --light: #f5eef8;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --warning: #f1c40f;
+            --danger: #e74c3c;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f1e1;
-            margin: 0;
+            font-family: 'Montserrat', cursive;
+            line-height: 1.8;
+            color: #444;
+            max-width: 900px;
+            margin: 0 auto;
             padding: 0;
+            background-color: #fef6ff;
         }
-        header {
-            background-color: #c8a16b;
-            text-align: center;
-            padding: 20px 0;
+        
+        .ebook-container {
+            background: white;
+            box-shadow: 0 0 25px rgba(155, 89, 182, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 30px auto;
+            border: 3px solid var(--light);
         }
-        header img {
-            width: 120px;
-            margin-bottom: 10px;
-        }
-        header h1 {
-            color: #5a4d32;
-            font-size: 36px;
-            margin: 0;
-        }
-        section {
-            padding: 30px;
-            background-color: #ffffff;
-        }
-        h2 {
-            color: #4f703c;
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        .recipe {
-            margin-bottom: 30px;
-        }
-        .recipe h3 {
-            color: #5a4d32;
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-        .recipe ul {
-            list-style-type: none;
-            padding-left: 20px;
-        }
-        .recipe li {
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-        footer {
-            background-color: #c8a16b;
-            text-align: center;
-            padding: 10px 0;
+        
+        .ebook-header {
+            background: #40ff80;
             color: white;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 5px dotted white;
+        }
+        
+        .ebook-header h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .ebook-header h2 {
+            font-size: 1.6rem;
+            margin: 15px 0 0;
+            font-weight: 400;
+        }
+        
+        .ebook-content {
+            padding: 40px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 50px 0 25px;
+            padding: 15px;
+            background-color: var(--light);
+            border-radius: 50px;
+            text-align: center;
+            border: 2px dashed var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.6rem;
+            color: var(--secondary);
+            margin: 35px 0 20px;
+            padding-left: 15px;
+            border-left: 5px solid var(--accent);
+        }
+        
+        .recipe {
+            background: white;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 2px solid var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .recipe:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .recipe-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .recipe-title span {
+            margin-right: 15px;
+            font-size: 2rem;
+        }
+        
+        .ingredients, .preparation {
+            margin: 25px 0;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgba(245, 238, 248, 0.5);
+        }
+        
+        .ingredients h4, .preparation h4 {
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .ingredients h4:before {
+            content: '🥗';
+            margin-right: 10px;
+        }
+        
+        .preparation h4:before {
+            content: '👩‍🍳';
+            margin-right: 10px;
+        }
+        
+        .ingredients ul, .preparation ol {
+            padding-left: 25px;
+        }
+        
+        .ingredients li, .preparation li {
+            margin-bottom: 12px;
+            padding-left: 10px;
+            position: relative;
+        }
+        
+        .ingredients li:before {
+            content: '🐾';
+            position: absolute;
+            left: -25px;
+        }
+        
+        .preparation li:before {
+            content: '👉';
+            position: absolute;
+            left: -25px;
+            color: var(--primary);
+        }
+        
+        .tip-box {
+            background-color: #e8f4f8;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 35px 0;
+            border-left: 5px solid var(--accent);
+            display: flex;
+            align-items: center;
+        }
+        
+        .tip-icon {
+            font-size: 2.5rem;
+            margin-right: 20px;
+            color: var(--accent);
+        }
+        
+        .warning-box {
+            background-color: #fdecea;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 35px 0;
+            border-left: 5px solid var(--danger);
+        }
+        
+        .benefits-box {
+            background-color: #e8f5e9;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 35px 0;
+            border-left: 5px solid var(--success);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background-color: var(--light);
+            color: var(--primary);
+            font-size: 1.1rem;
+            border-top: 3px dotted var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .ebook-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .ebook-header h2 {
+                font-size: 1.3rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <img src="imagem/dietapet.jpg" alt="Pet" />
+    <div class="ebook-container">
+        <div class="ebook-header">
+            <h1>🐾 Dieta Pet Ancestral 🍎</h1>
+            <h2>Carnes Cruas, Vísceras e Vegetais Seguros</h2>
+        </div>
         
-        <h1>Dieta Pet Saudável</h1>
-    </header>
-
-    <section>
-        <h2>Introdução</h2>
-        <p>Nosso objetivo é oferecer aos seus pets uma dieta saudável e natural, com ingredientes frescos e nutritivos, assim como a alimentação dos cães e gatos selvagens em seu habitat natural. Em vez de alimentos processados, suas refeições serão compostas por carnes cruas, verduras e legumes, que respeitam a natureza do organismo dos animais.</p>
-
-        <h2>Receitas para o seu Pet</h2>
-
-        <div class="recipe">
-            <h3>Receita 1: Carne Crua com Abóbora</h3>
-            <ul>
-                <li><strong>Ingredientes:</strong></li>
-                <li>- 300g de carne de músculo (crua, de preferência orgânica)</li>
-                <li>- 1/2 abóbora cozida</li>
-                <li>- 1 colher de sopa de azeite de oliva extra virgem</li>
-                <li>- 1/4 de cenoura ralada</li>
-                <li><strong>Modo de preparo:</strong></li>
-                <li>- Corte a carne em pedaços pequenos, apropriados para o tamanho do seu pet.</li>
-                <li>- Cozinhe a abóbora e a cenoura até ficarem macias e amasse-as.</li>
-                <li>- Misture a carne crua com a abóbora amassada, a cenoura ralada e o azeite de oliva.</li>
-                <li>- Sirva a refeição fresca para o seu pet, com base no tamanho dele.</li>
-            </ul>
+            
+            <h2>🍗 Receitas com Carnes Cruas</h2>
+            
+            <div class="recipe">
+                <div class="recipe-title"><span>🥩</span> Tartare de Carne Bovina</div>
+                <div class="ingredients">
+                    <h4>Ingredientes</h4>
+                    <ul>
+                        <li>200g de carne bovina magra (patinho)</li>
+                        <li>1 ovo caipira cru</li>
+                        <li>1 colher de óleo de coco</li>
+                        <li>1 colher de semente de abóbora triturada</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <h4>Preparo</h4>
+                    <ol>
+                        <li>Corte a carne em cubos pequenos</li>
+                        <li>Misture com o ovo cru</li>
+                        <li>Adicione o óleo de coco</li>
+                        <li>Polvilhe com semente de abóbora</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="recipe">
+                <div class="recipe-title"><span>🍗</span> Frango Cru Desfiado</div>
+                <div class="ingredients">
+                    <h4>Ingredientes</h4>
+                    <ul>
+                        <li>300g de peito de frango cru</li>
+                        <li>1/2 xícara de abobrinha ralada</li>
+                        <li>1 colher de azeite</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <h4>Preparo</h4>
+                    <ol>
+                        <li>Desfie o frango cru em tiras finas</li>
+                        <li>Misture com a abobrinha ralada crua</li>
+                        <li>Regue com azeite antes de servir</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="recipe">
+                <div class="recipe-title"><span>🐟</span> Salmão Cru Nutritivo</div>
+                <div class="ingredients">
+                    <h4>Ingredientes</h4>
+                    <ul>
+                        <li>200g de salmão fresco (sem pele e espinhas)</li>
+                        <li>1 colher de óleo de linhaça</li>
+                        <li>1/4 de abacate amassado</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <h4>Preparo</h4>
+                    <ol>
+                        <li>Corte o salmão em cubos pequenos</li>
+                        <li>Misture com o abacate</li>
+                        <li>Regue com óleo de linhaça</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <h2>🧠 Receitas com Vísceras</h2>
+            
+            <div class="recipe">
+                <div class="recipe-title"><span>❤️</span> Coração de Frango Grelhado</div>
+                <div class="ingredients">
+                    <h4>Ingredientes</h4>
+                    <ul>
+                        <li>300g de coração de frango</li>
+                        <li>1 colher de óleo de coco</li>
+                        <li>1/2 xícara de brócolis cozido no vapor</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <h4>Preparo</h4>
+                    <ol>
+                        <li>Corte os corações ao meio</li>
+                        <li>Grelhe rapidamente no óleo de coco</li>
+                        <li>Misture com brócolis picado</li>
+                        <li>Espere esfriar antes de servir</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="recipe">
+                <div class="recipe-title"><span>🍖</span> Mix de Fígado e Rim</div>
+                <div class="ingredients">
+                    <h4>Ingredientes</h4>
+                    <ul>
+                        <li>150g de fígado bovino</li>
+                        <li>100g de rim bovino</li>
+                        <li>1 colher de azeite</li>
+                        <li>1/2 cenoura ralada</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <h4>Preparo</h4>
+                    <ol>
+                        <li>Cozinhe levemente as vísceras (3 minutos)</li>
+                        <li>Corte em pedaços pequenos</li>
+                        <li>Misture com cenoura ralada crua</li>
+                        <li>Regue com azeite</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="recipe">
+                <div class="recipe-title"><span>🍗</span> Moela Crocante</div>
+                <div class="ingredients">
+                    <h4>Ingredientes</h4>
+                    <ul>
+                        <li>250g de moela de frango</li>
+                        <li>1 colher de óleo de coco</li>
+                        <li>1/2 xícara de vagem picada</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <h4>Preparo</h4>
+                    <ol>
+                        <li>Cozinhe a moela até ficar macia</li>
+                        <li>Corte em tiras finas</li>
+                        <li>Refogue rapidamente no óleo</li>
+                        <li>Misture com vagem cozida no vapor</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <h2>🥦 Receitas com Vegetais</h2>
+            
+            <div class="recipe">
+                <div class="recipe-title"><span>🎃</span> Purê de Abóbora</div>
+                <div class="ingredients">
+                    <h4>Ingredientes</h4>
+                    <ul>
+                        <li>1 xícara de abóbora cozida</li>
+                        <li>1 colher de óleo de linhaça</li>
+                        <li>1 colher de farelo de aveia</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <h4>Preparo</h4>
+                    <ol>
+                        <li>Amasse a abóbora até formar purê</li>
+                        <li>Misture com o farelo de aveia</li>
+                        <li>Adicione o óleo de linhaça</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="recipe">
+                <div class="recipe-title"><span>🥕</span> Cenoura Assada</div>
+                <div class="ingredients">
+                    <h4>Ingredientes</h4>
+                    <ul>
+                        <li>2 cenouras grandes</li>
+                        <li>1 colher de azeite</li>
+                        <li>1 pitada de canela (opcional)</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <h4>Preparo</h4>
+                    <ol>
+                        <li>Corte as cenouras em palitos</li>
+                        <li>Regue com azeite</li>
+                        <li>Asse a 180°C por 20 minutos</li>
+                        <li>Espere esfriar antes de servir</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="recipe">
+                <div class="recipe-title"><span>🥬</span> Mix de Vegetais</div>
+                <div class="ingredients">
+                    <h4>Ingredientes</h4>
+                    <ul>
+                        <li>1/2 xícara de abobrinha picada</li>
+                        <li>1/2 xícara de vagem picada</li>
+                        <li>1/4 xícara de batata-doce cozida</li>
+                        <li>1 colher de azeite</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <h4>Preparo</h4>
+                    <ol>
+                        <li>Cozinhe os vegetais no vapor</li>
+                        <li>Amasse levemente a batata-doce</li>
+                        <li>Misture todos os ingredientes</li>
+                        <li>Regue com azeite</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <h2>🥣 Receitas Cozidas</h2>
+            
+            <div class="recipe">
+                <div class="recipe-title"><span>🍲</span> Sopa de Frango</div>
+                <div class="ingredients">
+                    <h4>Ingredientes</h4>
+                    <ul>
+                        <li>200g de peito de frango</li>
+                        <li>1/2 xícara de abóbora picada</li>
+                        <li>1/2 xícara de cenoura picada</li>
+                        <li>2 xícaras de água</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <h4>Preparo</h4>
+                    <ol>
+                        <li>Cozinhe o frango na água por 15 minutos</li>
+                        <li>Adicione os vegetais e cozinhe por mais 10 minutos</li>
+                        <li>Desfie o frango e misture com os vegetais</li>
+                        <li>Espere esfriar antes de servir</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="recipe">
+                <div class="recipe-title"><span>🍛</span> Risoto de Carne</div>
+                <div class="ingredients">
+                    <h4>Ingredientes</h4>
+                    <ul>
+                        <li>100g de carne moída</li>
+                        <li>1/2 xícara de arroz integral</li>
+                        <li>1/2 xícara de abobrinha picada</li>
+                        <li>1 colher de azeite</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <h4>Preparo</h4>
+                    <ol>
+                        <li>Cozinhe o arroz conforme instruções</li>
+                        <li>Refogue a carne no azeite</li>
+                        <li>Cozinhe a abobrinha no vapor</li>
+                        <li>Misture todos os ingredientes</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="recipe">
+                <div class="recipe-title"><span>🥘</span> Ensopado de Peixe</div>
+                <div class="ingredients">
+                    <h4>Ingredientes</h4>
+                    <ul>
+                        <li>200g de filé de peixe branco</li>
+                        <li>1/2 xícara de batata-doce picada</li>
+                        <li>1/2 xícara de vagem picada</li>
+                        <li>2 xícaras de água</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <h4>Preparo</h4>
+                    <ol>
+                        <li>Cozinhe a batata-doce na água por 10 minutos</li>
+                        <li>Adicione o peixe e a vagem</li>
+                        <li>Cozinhe por mais 8 minutos</li>
+                        <li>Desfie o peixe e misture com os vegetais</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                <h3>⚠️ Alimentos Proibidos para Pets</h3>
+                <p>NUNCA ofereça: cebola, alho, uvas, passas, chocolate, abacate, nozes macadâmia, álcool, cafeína, ossos cozidos, massa crua com fermento, alimentos com xilitol ou qualquer comida temperada.</p>
+            </div>
+            
+            <div class="benefits-box">
+                <h3>🌟 Benefícios da Alimentação Natural</h3>
+                <ul>
+                    <li>🐕 Pelagem mais brilhante e saudável</li>
+                    <li>💪 Melhor digestão e absorção de nutrientes</li>
+                    <li>🦷 Dentes mais limpos e hálito fresco</li>
+                    <li>⚡ Mais energia e disposição</li>
+                    <li>🧠 Melhor função cognitiva</li>
+                </ul>
+            </div>
+            
+            <div class="footer">
+                <p>🐶 Feito com amor para pets saudáveis e felizes 🐱</p>
+                <p>© 2023 - Receitas Naturais para Pets</p>
+            </div>
         </div>
-
-        <!-- More recipes (2 to 21) -->
-
-        <div class="recipe">
-            <h3>Receita 2: Frango Cru com Couve</h3>
-            <ul>
-                <li><strong>Ingredientes:</strong></li>
-                <li>- 250g de peito de frango cru (sem pele e sem ossos)</li>
-                <li>- 1 folha de couve picada</li>
-                <li>- 1 colher de sopa de azeite de oliva</li>
-                <li>- 1 maçã (sem sementes)</li>
-                <li><strong>Modo de preparo:</strong></li>
-                <li>- Corte o frango em pedaços pequenos.</li>
-                <li>- Lave bem a couve e corte em tiras finas.</li>
-                <li>- Pique a maçã em pedaços pequenos, retirando as sementes.</li>
-                <li>- Misture todos os ingredientes, incluindo o azeite de oliva, até que fiquem bem incorporados.</li>
-                <li>- Sirva imediatamente para o seu pet.</li>
-            </ul>
-        </div>
-
-        <div class="recipe">
-            <h3>Receita 3: Peixe Cru com Brócolis</h3>
-            <ul>
-                <li><strong>Ingredientes:</strong></li>
-                <li>- 200g de peixe cru (como salmão ou truta, sem espinhas)</li>
-                <li>- 1/2 brócolis cozido</li>
-                <li>- 1 colher de chá de óleo de coco</li>
-                <li><strong>Modo de preparo:</strong></li>
-                <li>- Corte o peixe em pedaços pequenos e retire todas as espinhas.</li>
-                <li>- Cozinhe os brócolis até ficarem bem macios e depois amasse-os.</li>
-                <li>- Misture o peixe cru com o brócolis e o óleo de coco.</li>
-                <li>- Sirva para o seu pet em uma refeição fresca e natural.</li>
-            </ul>
-        </div>
-
-        <!-- Adding more recipes to reach 21 -->
-        <div class="recipe">
-            <h3>Receita 4: Carne Crua com Espinafre</h3>
-            <ul>
-                <li><strong>Ingredientes:</strong></li>
-                <li>- 300g de carne moída crua</li>
-                <li>- 1 folha de espinafre fresco</li>
-                <li>- 1 colher de sopa de óleo de coco</li>
-                <li>- 1/2 batata-doce cozida</li>
-                <li><strong>Modo de preparo:</strong></li>
-                <li>- Cozinhe a batata-doce e amasse-a.</li>
-                <li>- Corte o espinafre em tiras pequenas e reserve.</li>
-                <li>- Misture todos os ingredientes, adicionando o óleo de coco por último.</li>
-                <li>- Sirva fresco para o seu pet.</li>
-            </ul>
-        </div>
-
-        <div class="recipe">
-            <h3>Receita 5: Peito de Frango com Batata-Doce</h3>
-            <ul>
-                <li><strong>Ingredientes:</strong></li>
-                <li>- 250g de peito de frango cru (sem ossos)</li>
-                <li>- 1 batata-doce média cozida</li>
-                <li>- 1 colher de chá de azeite de oliva</li>
-                <li><strong>Modo de preparo:</strong></li>
-                <li>- Cozinhe o peito de frango e depois corte em pedaços pequenos.</li>
-                <li>- Cozinhe a batata-doce e amasse-a.</li>
-                <li>- Misture o frango com a batata-doce e adicione o azeite de oliva.</li>
-                <li>- Sirva a mistura fresca para o seu pet.</li>
-            </ul>
-        </div>
-
-        <div class="recipe">
-            <h3>Receita 6: Carne Crua com Abóbora e Brócolis</h3>
-            <ul>
-                <li><strong>Ingredientes:</strong></li>
-                <li>- 300g de carne de músculo (crua)</li>
-                <li>- 1/2 abóbora cozida</li>
-                <li>- 1/2 brócolis cozido</li>
-                <li>- 1 colher de sopa de azeite de oliva</li>
-                <li><strong>Modo de preparo:</strong></li>
-                <li>- Cozinhe a abóbora e o brócolis até ficarem macios e amasse-os.</li>
-                <li>- Misture a carne crua com os vegetais e o azeite de oliva.</li>
-                <li>- Sirva para o seu pet.</li>
-            </ul>
-        </div>
-
-        <div class="recipe">
-            <h3>Receita 7: Carne Crua com Abobrinha</h3>
-            <ul>
-                <li><strong>Ingredientes:</strong></li>
-                <li>- 300g de carne crua (como músculo)</li>
-                <li>- 1/2 abobrinha ralada</li>
-                <li>- 1 colher de chá de óleo de coco</li>
-                <li><strong>Modo de preparo:</strong></li>
-                <li>- Rale a abobrinha e misture com a carne crua.</li>
-                <li>- Adicione o óleo de coco e misture bem.</li>
-                <li>- Sirva para o seu pet.</li>
-            </ul>
-        </div>
-
-        <div class="recipe">
-            <h3>Receita 8: Frango Cru com Cenoura e Couve</h3>
-            <ul>
-                <li><strong>Ingredientes:</strong></li>
-                <li>- 250g de peito de frango cru (sem ossos)</li>
-                <li>- 1/2 cenoura ralada</li>
-                <li>- 1 folha de couve picada</li>
-                <li><strong>Modo de preparo:</strong></li>
-                <li>- Corte o frango em pedaços pequenos.</li>
-                <li>- Misture a cenoura ralada com a couve picada e o frango.</li>
-                <li>- Sirva fresco para o seu pet.</li>
-            </ul>
-        </div>
-
-        <!-- Add similar recipes until reaching 21 in total -->
-        
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Dieta Pet Saudável - Todos os direitos reservados</p>
-    </footer>
+    </div>
 </body>
 </html>
